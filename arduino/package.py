@@ -95,11 +95,11 @@ def CreateFlashtoolExe(core_out_dir, root_dir):
       pyinstaller_separator +
       os.path.join('third_party', 'nxp', 'elftosb', platform_dir),
       '--add-binary',
-      os.path.join(root_dir, 'third_party', toolchain_dir, 'gcc-arm-none-eabi-9-2020-q2-update', 'bin', 'arm-none-eabi-objdump' +
-                   exe_extension) + pyinstaller_separator + os.path.join('third_party', toolchain_dir, 'gcc-arm-none-eabi-9-2020-q2-update', 'bin'),
+      os.path.join(root_dir, 'third_party', toolchain_dir, 'gcc-arm-none-eabi-10.3-2021.10', 'bin', 'arm-none-eabi-objdump' +
+                   exe_extension) + pyinstaller_separator + os.path.join('third_party', toolchain_dir, 'gcc-arm-none-eabi-10.3-2021.10', 'bin'),
       '--add-binary',
-      os.path.join(root_dir, 'third_party', toolchain_dir, 'gcc-arm-none-eabi-9-2020-q2-update', 'bin', 'arm-none-eabi-strip' +
-                   exe_extension) + pyinstaller_separator + os.path.join('third_party', toolchain_dir, 'gcc-arm-none-eabi-9-2020-q2-update', 'bin'),
+      os.path.join(root_dir, 'third_party', toolchain_dir, 'gcc-arm-none-eabi-10.3-2021.10', 'bin', 'arm-none-eabi-strip' +
+                   exe_extension) + pyinstaller_separator + os.path.join('third_party', toolchain_dir, 'gcc-arm-none-eabi-10.3-2021.10', 'bin'),
       '--hidden-import', 'progress.bar',
       '--hidden-import', 'progress',
       '--hidden-import', 'hexformat',
@@ -252,7 +252,7 @@ def manifest_main(args, **kwargs):
             {
                 'packager': 'coral',
                 'name': 'arm-none-eabi-gcc',
-                'version': '9-2020q2'
+                'version': '10.3-2021.10'
             },
             {
                 'packager': 'coral',
@@ -272,28 +272,28 @@ def manifest_main(args, **kwargs):
               'tools': [
                   {
                       'name': 'arm-none-eabi-gcc',
-                      'version': '9-2020q2',
+                      'version': '10.3-2021.10',
                       'systems': [
                           {
                               'host': 'x86_64-pc-linux-gnu',
-                              'url': 'https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2020-q2-update-x86_64-linux.tar.bz2',
-                              'archiveFileName': 'gcc-arm-none-eabi-9-2020-q2-update-x86_64-linux.tar.bz2',
-                              'checksum': 'MD5:2b9eeccc33470f9d3cda26983b9d2dc6',
-                              'size': '140360119'
+                              'url': 'https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2',
+                              'archiveFileName': 'gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2',
+                              'checksum': 'SHA-256:97dbb4f019ad1650b732faffcc881689cedc14e2b7ee863d390e0a41ef16c9a3',
+                              'size': '157089706'
                           },
                           {
                               'host': 'x86_64-apple-darwin',
-                              'url': 'https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2020-q2-update-mac.tar.bz2',
-                              'archiveFileName': 'gcc-arm-none-eabi-9-2020-q2-update-mac.tar.bz2',
-                              'checksum': 'MD5:75a171beac35453fd2f0f48b3cb239c3',
-                              'size': '142999997'
+                              'url': 'https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-mac.tar.bz2',
+                              'archiveFileName': 'gcc-arm-none-eabi-10.3-2021.10-mac.tar.bz2',
+                              'checksum': 'SHA-256:fb613dacb25149f140f73fe9ff6c380bb43328e6bf813473986e9127e2bc283b',
+                              'size': '158961466'
                           },
                           {
                               'host': 'i686-mingw32',
-                              'url': 'https://dl.google.com/coral/gcc-arm-none-eabi-9-2020-q2-update-win32-arduino1.zip',
-                              'archiveFileName': 'gcc-arm-none-eabi-9-2020-q2-update-win32-arduino1.zip',
-                              'checksum': 'SHA-256:daa13799151d05adb5c37016010e5ff649941aab4dac150a3ad649749cde4896',
-                              'size': '182850168'
+                              'url': 'https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-win32.zip',
+                              'archiveFileName': 'gcc-arm-none-eabi-10.3-2021.10-win32.zip',
+                              'checksum': 'SHA-256:d287439b3090843f3f4e29c7c41f81d958a5323aecefcf705c203bfd8ae3f2e7',
+                              'size': '200578763'
                           }
                       ]
                   },
@@ -348,7 +348,7 @@ def core_main(args, **kwargs):
 
     # Copy variant libraries.
     ar_path = os.path.join(root_dir, 'third_party', toolchain_dir,
-                           'gcc-arm-none-eabi-9-2020-q2-update', 'bin',
+                           'gcc-arm-none-eabi-10.3-2021.10', 'bin',
                            'arm-none-eabi-ar' + exe_extension)
     for variant in ['coral_micro', 'coral_micro_poe', 'coral_micro_wifi']:
       libs_dir = os.path.join(core_out_dir, 'variants', variant, 'libs')
